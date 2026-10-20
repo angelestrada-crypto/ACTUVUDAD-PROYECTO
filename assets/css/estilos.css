@@ -1,0 +1,269 @@
+/* =========================================================
+   Casos Prácticos de Geometría — estilos
+   Paleta basada en el bosquejo (azul pizarra + tarjetas claras)
+   ========================================================= */
+:root {
+    --fondo: #2e7d6b;
+    --pizarra: #14463a;
+    --pizarra-claro: #2f8f78;
+    --cabecera: #b7dccf;
+    --caja: #e2f3ec;
+    --borde: #6fb39e;
+}
+
+body {
+    background: var(--fondo);
+    color: #1f2d3d;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main { flex: 1; }
+
+/* ---- Barra superior y pie ---- */
+.barra-superior { background: var(--pizarra); padding: .65rem 0; }
+.barra-superior .marca { color: #fff; font-weight: 700; text-decoration: none; }
+.barra-superior .datos-estudiante { color: #d4efe4; font-size: .9rem; }
+.pie-pagina { background: var(--pizarra); color: #bfe3d4; padding: .8rem 0; font-size: .85rem; }
+
+/* ---- Títulos ---- */
+.titulo-menu, .titulo-pagina {
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+.titulo-pagina { font-size: 1.7rem; }
+.titulo-menu { font-size: 2.2rem; }
+
+/* ---- Paneles ---- */
+.panel {
+    background: #fff;
+    border: 2px solid var(--borde);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+}
+.panel-cabecera {
+    background: var(--cabecera);
+    color: var(--pizarra);
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: .55rem 1rem;
+    border-bottom: 2px solid var(--borde);
+    font-size: .95rem;
+}
+.panel-cuerpo { padding: 1rem; }
+
+.caja-enunciado {
+    background: var(--caja);
+    border: 2px solid var(--borde);
+    border-radius: 10px;
+    padding: .7rem 1rem;
+    color: var(--pizarra);
+}
+
+/* ---- Menú principal ---- */
+.categoria-titulo {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--pizarra-claro);
+    text-transform: uppercase;
+    margin: 1rem 0 .6rem;
+}
+.categoria-titulo:first-child { margin-top: 0; }
+.caso-item {
+    border: 1px solid #bcd9cd;
+    border-radius: 10px;
+    padding: .8rem 1rem;
+    margin-bottom: .8rem;
+    background: #f4fbf8;
+    transition: transform .15s, box-shadow .15s;
+}
+.caso-item:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0, 0, 0, .12); }
+.caso-titulo { font-size: 1.05rem; font-weight: 800; margin: 0; }
+.badge-categoria { background: var(--pizarra-claro); font-weight: 600; }
+.caso-enunciado {
+    background: var(--caja);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: .45rem .75rem;
+    margin: .6rem 0;
+    font-size: .95rem;
+}
+
+/* ---- Botones ---- */
+.btn-accion, .btn-nav {
+    background: var(--pizarra-claro);
+    border: 2px solid var(--pizarra);
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: .82rem;
+    border-radius: 10px;
+}
+.btn-accion:hover, .btn-nav:hover { background: var(--pizarra); color: #fff; }
+.btn-nav.disabled { opacity: .45; }
+.btn-acceso {
+    background: var(--pizarra-claro);
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    width: 100%;
+    border: 2px solid var(--pizarra);
+}
+.btn-acceso:hover { background: var(--pizarra); color: #fff; }
+
+/* ---- Panel de control de navegación ---- */
+.panel-control {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .6rem;
+    background: rgba(255, 255, 255, .15);
+    border: 2px solid var(--borde);
+    border-radius: 12px;
+    padding: .7rem;
+}
+
+/* ---- Visor de código estilo VS Code (Dark+) ---- */
+.editor-vscode {
+    background: #1e1e1e;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+.editor-barra {
+    background: #252526;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .35rem .75rem;
+    border-bottom: 1px solid #333;
+}
+.editor-barra .punto { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.punto.rojo { background: #ff5f56; }
+.punto.amarillo { background: #ffbd2e; }
+.punto.verde { background: #27c93f; }
+.editor-barra .pestana {
+    margin-left: .6rem;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    font: 12px Consolas, "Courier New", monospace;
+    padding: .2rem .7rem;
+    border-top: 2px solid #007acc;
+}
+.editor-vscode pre[class*="language-"] {
+    margin: 0;
+    background: #1e1e1e;
+    padding: 1rem 1rem 1rem 3.4rem;
+    max-height: 430px;
+    overflow: auto;
+    font: 13.5px/1.55 Consolas, "Fira Code", "Courier New", monospace;
+    border-radius: 0;
+}
+.editor-vscode code[class*="language-"] {
+    color: #d4d4d4;
+    background: none;
+    text-shadow: none;
+    font: inherit;
+}
+.editor-vscode .line-numbers-rows { border-right-color: #3c3c3c; }
+.editor-vscode .line-numbers-rows > span:before { color: #858585; }
+
+.token.comment { color: #6a9955; font-style: italic; }
+.token.keyword, .token.boolean, .token.constant, .token.null, .token.package { color: #569cd6; }
+.token.delimiter.important, .token.php.language-php { color: #569cd6; }
+.token.string, .token.char { color: #ce9178; }
+.token.number { color: #b5cea8; }
+.token.function { color: #dcdcaa; }
+.token.variable { color: #9cdcfe; }
+.token.class-name, .token.builtin { color: #4ec9b0; }
+.token.operator, .token.punctuation { color: #d4d4d4; }
+.token.property { color: #9cdcfe; }
+
+/* ---- Resultados ---- */
+.tabla-resultados { font-size: .92rem; }
+.tabla-resultados th { width: 45%; color: var(--pizarra); background: #e8f5ef; }
+.resultado-grande {
+    text-align: center;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--pizarra);
+    background: var(--caja);
+    border: 2px solid var(--borde);
+    border-radius: 10px;
+    padding: .6rem;
+    margin-top: .8rem;
+}
+.figura-wrap {
+    border: 1px solid #bcd9cd;
+    border-radius: 10px;
+    background: #f4fbf8;
+    padding: .4rem;
+    margin-top: .8rem;
+}
+.figura-svg { width: 100%; max-height: 210px; }
+.fig-shape { fill: #b7dccf; stroke: #14463a; stroke-width: 2; }
+.fig-aux { stroke: #14463a; stroke-width: 1.5; stroke-dasharray: 5 4; fill: none; }
+.fig-label { font: 600 13px "Segoe UI", sans-serif; fill: #14463a; }
+
+/* ---- Marco de la aplicación (página 3) ---- */
+.marco-app {
+    background: #fff;
+    border: 2px solid var(--borde);
+    border-radius: 14px;
+    padding: 1.5rem;
+    min-height: 380px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+}
+.barra-enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .6rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 575.98px) {
+    .titulo-menu { font-size: 1.7rem; }
+    .titulo-pagina { font-size: 1.3rem; }
+}
+
+/* ---- Visor de código: altura fija, barras de desplazamiento y pestañas ---- */
+.panel-codigo-flex { display: flex; flex-direction: column; }
+.editor-vscode { display: flex; flex-direction: column; }
+.editor-vscode pre[class*="language-"] {
+    height: 480px;
+    max-height: none;
+    overflow: scroll;
+    scrollbar-width: auto;
+    scrollbar-color: #6e7681 #1e1e1e;
+}
+.editor-vscode pre::-webkit-scrollbar { width: 14px; height: 14px; }
+.editor-vscode pre::-webkit-scrollbar-track { background: #1e1e1e; }
+.editor-vscode pre::-webkit-scrollbar-thumb { background: #5a5a5a; border: 3px solid #1e1e1e; border-radius: 8px; }
+.editor-vscode pre::-webkit-scrollbar-thumb:hover { background: #8a8a8a; }
+.editor-vscode pre::-webkit-scrollbar-corner { background: #1e1e1e; }
+.editor-vscode pre code { white-space: pre; }
+
+.pestanas-codigo { margin-left: .6rem; flex-wrap: nowrap; }
+.pestanas-codigo .nav-link {
+    background: #2d2d2d;
+    color: #a0a0a0;
+    font: 12px Consolas, "Courier New", monospace;
+    padding: .25rem .8rem;
+    border: 0;
+    border-top: 2px solid transparent;
+    border-radius: 0;
+}
+.pestanas-codigo .nav-link.active { background: #1e1e1e; color: #fff; border-top-color: #3fb68b; }
+.btn-copiar {
+    background: #3fb68b;
+    color: #08241b;
+    border: 0;
+    border-radius: 6px;
+    font: 700 12px "Segoe UI", sans-serif;
+    padding: .25rem .7rem;
+}
+.btn-copiar:hover { background: #5fd1a6; }
+.editor-barra { flex-wrap: wrap; }
